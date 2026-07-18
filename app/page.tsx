@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import {
   MagnifyingGlass,
@@ -7,6 +6,8 @@ import {
 } from "@phosphor-icons/react/dist/ssr";
 import RevealSection from "@/components/RevealSection";
 import FeatureShowcase from "@/components/FeatureShowcase";
+import ParallaxImage from "@/components/ParallaxImage";
+import StaggerReveal from "@/components/StaggerReveal";
 
 const situations = [
   {
@@ -67,12 +68,11 @@ export default function Home() {
         <RevealSection delay={0.15} className="relative mx-auto max-w-6xl px-4 pb-20 sm:px-6 lg:px-8">
           <div className="relative overflow-hidden rounded-[32px] shadow-2xl shadow-black/15 ring-1 ring-black/5">
             <div className="relative aspect-[16/8] w-full">
-              <Image
+              <ParallaxImage
                 src="https://picsum.photos/seed/discareer-hero-workspace/1600/800"
                 alt="A professional planning their career journey"
-                fill
                 priority
-                className="object-cover"
+                className="absolute inset-0"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent" />
             </div>
@@ -127,11 +127,11 @@ export default function Home() {
             </p>
           </RevealSection>
 
-          <div className="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-3">
-            {situations.map((s, i) => {
+          <StaggerReveal className="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-3">
+            {situations.map((s) => {
               const Icon = s.icon;
               return (
-                <RevealSection key={s.title} delay={i * 0.08} className="flex flex-col items-center">
+                <div key={s.title} className="stagger-item flex flex-col items-center">
                   <div
                     className="flex h-16 w-16 items-center justify-center rounded-full shadow-md"
                     style={{ backgroundColor: s.accent }}
@@ -144,10 +144,10 @@ export default function Home() {
                   <p className="mt-2 max-w-[240px] text-[15px] leading-relaxed text-zinc-600 dark:text-zinc-400">
                     {s.body}
                   </p>
-                </RevealSection>
+                </div>
               );
             })}
-          </div>
+          </StaggerReveal>
         </div>
       </section>
 
@@ -177,11 +177,10 @@ export default function Home() {
 
           <RevealSection delay={0.15} className="lg:col-span-6">
             <div className="relative aspect-[5/4] w-full overflow-hidden rounded-[28px] shadow-xl shadow-black/5">
-              <Image
+              <ParallaxImage
                 src="https://picsum.photos/seed/discareer-journal-notes/900/720"
                 alt="Notes and planning materials for a career search"
-                fill
-                className="object-cover"
+                className="absolute inset-0"
               />
             </div>
           </RevealSection>

@@ -3,6 +3,8 @@ import {
   MagnifyingGlass,
   Stack,
   TrendUp,
+  WarningCircle,
+  CheckCircle,
 } from "@phosphor-icons/react/dist/ssr";
 import RevealSection from "@/components/RevealSection";
 import FeatureShowcase from "@/components/FeatureShowcase";
@@ -27,6 +29,43 @@ const situations = [
     body: "You're switching careers and need to understand your options.",
     icon: TrendUp,
     accent: "#5FAFA0",
+  },
+];
+
+const costs = [
+  {
+    title: "Applications sent without a strategy.",
+    body: "You apply to whatever's open instead of what actually fits, and it shows.",
+  },
+  {
+    title: "Interviews you're not ready for.",
+    body: "Without your own notes and context, you're caught off guard by questions you've already been asked before.",
+  },
+  {
+    title: "Offers judged in isolation.",
+    body: "No salary benchmark means you don't know if what's on the table is fair.",
+  },
+];
+
+const outcomes = [
+  "You apply with confidence, not hope.",
+  "You know your worth before you negotiate.",
+  "Every application has a home.",
+  "You never repeat yourself in an interview.",
+];
+
+const faqs = [
+  {
+    q: "Is this just another app to manage?",
+    a: "No. Discareer replaces the two or three tools you're already juggling with one connected place.",
+  },
+  {
+    q: "Do I need to already be job hunting?",
+    a: "No. It works just as well if you're only starting to think about a change.",
+  },
+  {
+    q: "What does it cost?",
+    a: "Creating an account is free. Paid plans are available if you want more, but you can get real value without paying anything.",
   },
 ];
 
@@ -133,6 +172,44 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Interest: stakes */}
+      <section className="bg-white py-20 lg:py-28 dark:bg-zinc-950">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <RevealSection className="mx-auto max-w-2xl text-center">
+            <h2 className="text-4xl font-bold tracking-tight text-zinc-950 sm:text-5xl dark:text-white">
+              Here&apos;s what staying stuck actually costs you.
+            </h2>
+            <p className="mt-4 text-lg text-zinc-600 dark:text-zinc-400">
+              Not knowing your direction has a real, ongoing cost.
+            </p>
+          </RevealSection>
+
+          <div className="mt-14 divide-y divide-zinc-200 dark:divide-zinc-800">
+            {costs.map((c, i) => (
+              <RevealSection
+                key={c.title}
+                delay={i * 0.08}
+                className="flex flex-col gap-3 py-7 sm:flex-row sm:items-start sm:gap-6"
+              >
+                <WarningCircle
+                  size={24}
+                  weight="bold"
+                  className="mt-0.5 shrink-0 text-[#F0714E]"
+                />
+                <div>
+                  <h3 className="text-lg font-semibold text-zinc-950 dark:text-white">
+                    {c.title}
+                  </h3>
+                  <p className="mt-1.5 max-w-xl text-[15px] leading-relaxed text-zinc-600 dark:text-zinc-400">
+                    {c.body}
+                  </p>
+                </div>
+              </RevealSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Desire: differentiation */}
       <section className="bg-white py-20 lg:py-28 dark:bg-zinc-950">
         <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:gap-16 lg:px-8">
@@ -182,6 +259,58 @@ export default function Home() {
 
           <div className="mt-14">
             <FeatureShowcase />
+          </div>
+        </div>
+      </section>
+
+      {/* Desire: payoff */}
+      <section className="bg-[#F4F1EC] py-20 lg:py-28 dark:bg-zinc-900">
+        <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
+          <RevealSection>
+            <h2 className="text-4xl font-bold tracking-tight text-zinc-950 sm:text-5xl dark:text-white">
+              This is what it looks like on the other side.
+            </h2>
+            <p className="mx-auto mt-4 max-w-lg text-lg text-zinc-600 dark:text-zinc-400">
+              Real clarity, not more guesswork.
+            </p>
+          </RevealSection>
+
+          <StaggerReveal className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2">
+            {outcomes.map((o) => (
+              <div
+                key={o}
+                className="stagger-item flex items-center gap-3 rounded-2xl bg-white px-6 py-5 text-left shadow-sm dark:bg-zinc-800"
+              >
+                <CheckCircle size={22} weight="fill" className="shrink-0 text-[#5FAFA0]" />
+                <p className="text-[15px] font-medium text-zinc-800 dark:text-zinc-200">
+                  {o}
+                </p>
+              </div>
+            ))}
+          </StaggerReveal>
+        </div>
+      </section>
+
+      {/* Bridge to action: objection handling */}
+      <section className="bg-white py-20 lg:py-28 dark:bg-zinc-950">
+        <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
+          <RevealSection className="text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-zinc-950 sm:text-4xl dark:text-white">
+              A few quick questions, answered.
+            </h2>
+          </RevealSection>
+
+          <div className="mt-10 divide-y divide-zinc-200 dark:divide-zinc-800">
+            {faqs.map((f, i) => (
+              <RevealSection key={f.q} delay={i * 0.08} className="py-6">
+                <h3 className="text-[17px] font-semibold text-zinc-950 dark:text-white">
+                  {f.q}
+                </h3>
+                <p className="mt-2 text-[15px] leading-relaxed text-zinc-600 dark:text-zinc-400">
+                  {f.a}
+                </p>
+              </RevealSection>
+            ))}
           </div>
         </div>
       </section>

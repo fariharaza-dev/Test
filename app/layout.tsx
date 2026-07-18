@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Explore careers. Discover your strengths. Connect with purpose.",
+  title: "The clearest path to your next role.",
   description:
-    "Discareer helps you explore career options, understand your potential, and receive AI-powered guidance to thrive in today's evolving job market.",
+    "Discareer combines career clarity, salary insight, and application tracking in one place, so you always know your next move.",
 };
 
 export default function RootLayout({

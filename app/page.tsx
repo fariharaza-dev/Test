@@ -33,7 +33,7 @@ const situations = [
 export default function Home() {
   return (
     <>
-      {/* Hero */}
+      {/* Attention: Hero */}
       <section className="relative overflow-hidden bg-white dark:bg-zinc-950">
         <div className="pointer-events-none absolute inset-x-0 top-0 h-[560px] bg-gradient-to-b from-[#FFF1EA] to-white dark:from-zinc-900 dark:to-zinc-950" />
         <div className="pointer-events-none absolute left-1/2 top-[-160px] h-[420px] w-[720px] -translate-x-1/2 rounded-full bg-[#F0714E]/20 blur-[110px]" />
@@ -41,12 +41,12 @@ export default function Home() {
         <div className="relative mx-auto max-w-5xl px-4 pt-20 pb-8 text-center sm:px-6 lg:pt-28 lg:px-8">
           <RevealSection>
             <h1 className="text-4xl font-bold tracking-tight text-zinc-950 sm:text-5xl lg:text-[3.5rem] lg:leading-[1.1] dark:text-white">
-              Explore careers. Discover your strengths. Connect with purpose.
+              The clearest path to your next role.
             </h1>
             <p className="mx-auto mt-6 max-w-xl text-lg text-zinc-600 dark:text-zinc-400">
-              Discareer helps you explore career options, understand your
-              potential, and receive AI-powered guidance to thrive in
-              today&apos;s evolving job market.
+              Discareer combines career clarity, salary insight, and
+              application tracking in one place, so you always know your
+              next move.
             </p>
             <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
               <Link
@@ -96,34 +96,16 @@ export default function Home() {
         </RevealSection>
       </section>
 
-      {/* Feature showcase */}
-      <section id="capabilities" className="bg-white py-20 lg:py-28 dark:bg-zinc-950">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <RevealSection className="mx-auto max-w-2xl text-center">
-            <h2 className="text-4xl font-bold tracking-tight text-zinc-950 sm:text-5xl dark:text-white">
-              Your career command center
-            </h2>
-            <p className="mt-4 text-lg text-zinc-600 dark:text-zinc-400">
-              Everything you need to move forward, in one connected place.
-            </p>
-          </RevealSection>
-
-          <div className="mt-14">
-            <FeatureShowcase />
-          </div>
-        </div>
-      </section>
-
-      {/* Is this you */}
+      {/* Interest: Is this you */}
       <section className="bg-[#FAFAF8] py-20 lg:py-28 dark:bg-zinc-900">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <RevealSection>
             <h2 className="text-4xl font-bold tracking-tight text-zinc-950 sm:text-5xl dark:text-white">
-              Is this you?
+              You&apos;re not alone if this sounds familiar.
             </h2>
             <p className="mx-auto mt-4 max-w-lg text-lg text-zinc-600 dark:text-zinc-400">
-              Discareer was built for the defining moments of your
-              professional life.
+              Three moments where most people feel stuck. See if one of
+              these is you right now.
             </p>
           </RevealSection>
 
@@ -151,7 +133,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* The missing link */}
+      {/* Desire: differentiation */}
       <section className="bg-white py-20 lg:py-28 dark:bg-zinc-950">
         <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:gap-16 lg:px-8">
           <RevealSection className="lg:col-span-6">
@@ -159,19 +141,18 @@ export default function Home() {
               The missing link
             </p>
             <h2 className="mt-4 text-4xl font-bold tracking-tight text-zinc-950 sm:text-5xl dark:text-white">
-              Don&apos;t manage your career in the margins.
+              You shouldn&apos;t need five tabs open to plan your career.
             </h2>
             <p className="mt-5 text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
-              Current workflows force you to live in two different worlds.
-              One offers insights, the other offers listings. Neither helps
-              you manage the journey in between.
+              Career sites give you insight. Job boards give you listings.
+              Neither helps you connect the two.
             </p>
             <p className="mt-4 text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
               <span className="font-semibold text-zinc-900 dark:text-zinc-100">
                 Discareer bridges the gap.
               </span>{" "}
-              We combine self-discovery with active tracking, creating a
-              single source of truth for your professional life.
+              One connected place for self-discovery and active tracking, so
+              nothing falls through the cracks.
             </p>
           </RevealSection>
 
@@ -187,16 +168,34 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Final CTA */}
+      {/* Desire: proof */}
+      <section id="capabilities" className="bg-white py-20 lg:py-28 dark:bg-zinc-950">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <RevealSection className="mx-auto max-w-2xl text-center">
+            <h2 className="text-4xl font-bold tracking-tight text-zinc-950 sm:text-5xl dark:text-white">
+              See what changes when it&apos;s all in one place.
+            </h2>
+            <p className="mt-4 text-lg text-zinc-600 dark:text-zinc-400">
+              Four tools working together, not four different tabs.
+            </p>
+          </RevealSection>
+
+          <div className="mt-14">
+            <FeatureShowcase />
+          </div>
+        </div>
+      </section>
+
+      {/* Action */}
       <section className="relative overflow-hidden bg-[#173049] py-24 lg:py-32">
         <div className="absolute -top-24 right-0 h-96 w-96 rounded-full bg-[#F0714E]/25 blur-[110px]" />
         <div className="absolute -bottom-24 left-0 h-96 w-96 rounded-full bg-[#5FAFA0]/20 blur-[110px]" />
         <RevealSection className="relative mx-auto max-w-2xl px-4 text-center sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-            Ready to take control?
+            Your next role won&apos;t find itself.
           </h2>
           <p className="mt-4 text-lg text-white/70">
-            Sign up now and start making confident career decisions.
+            Create a free account and get moving in minutes.
           </p>
           <div className="mt-9">
             <Link
